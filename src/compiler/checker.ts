@@ -1968,13 +1968,13 @@ export function createTypeChecker(host: TypeCheckerHost): TypeChecker {
             outofbandVarianceMarkerHandler(/*onlyUnreliable*/ true);
         }
         return t;
-    }, () => "(unmeasurable reporter)");
+    }, () => "(unreliable reporter)");
     var reportUnmeasurableMapper = makeFunctionTypeMapper(t => {
         if (outofbandVarianceMarkerHandler && (t === markerSuperType || t === markerSubType || t === markerOtherType)) {
             outofbandVarianceMarkerHandler(/*onlyUnreliable*/ false);
         }
         return t;
-    }, () => "(unreliable reporter)");
+    }, () => "(unmeasurable reporter)");
 
     var emptyObjectType = createAnonymousType(/*symbol*/ undefined, emptySymbols, emptyArray, emptyArray, emptyArray);
     var emptyJsxObjectType = createAnonymousType(/*symbol*/ undefined, emptySymbols, emptyArray, emptyArray, emptyArray);
